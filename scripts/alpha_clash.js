@@ -13,6 +13,18 @@ function continueGame(){
   //Step-1: generate a random alphabet
     const alphabet = getRandomAlphabet();
     console.log('Your random Alphabet' , alphabet);
+    // set randomly generated alphabet to the  screen  
+    const currentAlphabet = document.getElementById('current-alphabet');
+    currentAlphabet.innerText = alphabet ;
+
+    //set background color 
+    setBackgroundColorById(alphabet);
+    
+}
+
+function setBackgroundColorById(elementId){
+const element = document.getElementById(elementId);
+element.classList.add('bg-orange-400');
 }
 
 
@@ -31,5 +43,7 @@ function getRandomAlphabet(){
     const index = Math.round(Math.random()*25);
     const alphabet = alphabets[index];
     return alphabet;
+
+
 }
 
