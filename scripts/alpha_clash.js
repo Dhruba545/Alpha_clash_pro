@@ -9,9 +9,23 @@
 //    console.log(playGroundSection.classList);
 // }
 
-function handleKeyboardButtonPress(){
-    console.log('button pressed');
+function handleKeyboardButtonPress(event){
+    const playerPress = event.key;
 
+    //get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    console.log(playerPress , expectedAlphabet);
+
+     // check matched or not 
+     if(playerPress === expectedAlphabet){
+       removeBackgroundColorById(expectedAlphabet);
+        continueGame();
+     }
+     else{
+        console.log('Not matched');
+     }
 }
 document.addEventListener('keyup' , handleKeyboardButtonPress)
 
@@ -32,6 +46,10 @@ function continueGame(){
 function setBackgroundColorById(elementId){
 const element = document.getElementById(elementId);
 element.classList.add('bg-orange-400');
+}
+function removeBackgroundColorById(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400');
 }
 
 
