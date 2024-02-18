@@ -9,6 +9,13 @@
 //    console.log(playGroundSection.classList);
 // }
 
+function handleKeyboardButtonPress(){
+    console.log('button pressed');
+
+}
+document.addEventListener('keyup' , handleKeyboardButtonPress)
+
+
 function continueGame(){
   //Step-1: generate a random alphabet
     const alphabet = getRandomAlphabet();
@@ -45,5 +52,9 @@ function getRandomAlphabet(){
     return alphabet;
 
 
+}
+function score(){
+    hiddenElementByid('play-ground');
+    showElementById('last');
 }
 
